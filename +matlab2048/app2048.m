@@ -1,8 +1,7 @@
 classdef app2048 < handle
-	%UNTITLED5 Summary of this class goes here
-	%   Detailed explanation goes here
+	%app2048 MVC
 	
-	properties
+	properties (Access = private)
 		Model
 		View
 		Controller

@@ -93,6 +93,7 @@ classdef model2048 < handle
 			end
 		end % addNewBlock
 	end
+	
 end
 
 

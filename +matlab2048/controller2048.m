@@ -1,8 +1,8 @@
 classdef controller2048 < handle
-	%239 Summary of this class goes here
-	%   Detailed explanation goes here
+	%controller2048 This class allows a user to interact with the model and
+	%the view
 	
-	properties
+	properties (Access = private)
 		Model
 		View
 		Listeners = cell(0,1);
@@ -18,7 +18,9 @@ classdef controller2048 < handle
 			listener = event.listener( view, 'KeyPressed', @obj.onKeyPressed);
 			obj.Listeners = {listener};
 		end % constructor
-		
+	end
+	
+	methods (Access = private)
 		function onKeyPressed(obj, ~, evtdata)
 			switch evtdata.Key
 				case 'leftarrow'
@@ -30,7 +32,7 @@ classdef controller2048 < handle
 				case 'uparrow'
 					obj.Model.move('up');
 				otherwise
-					%do nothing
+					% do nothing
 			end
 		end
 	end

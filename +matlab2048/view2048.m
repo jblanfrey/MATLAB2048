@@ -1,7 +1,7 @@
 classdef view2048 < hgsetget
 	%view2048 Implements a view of model2048
 	
-	properties (Access = protected)
+	properties (Access = private)
 		Figure
 		Grid
 		Blocks
@@ -59,9 +59,9 @@ classdef view2048 < hgsetget
 			listenerGameOver = event.listener( model, 'GameOver', @app.onGameOver);
 			app.Listeners = {listenerBoardUpdated, listenerGameOver};
 		end % constructor
-	end % constructor
+	end
 	
-	methods
+	methods (Access = private)
 		function onBoardUpdated(obj, src, ~)
 			for n=1:4
 				for m=1:4
