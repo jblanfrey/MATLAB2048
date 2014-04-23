@@ -35,14 +35,10 @@ classdef view2048 < hgsetget
 				'Spacing', 10,...
 				'Padding', 10);
 			
-			% create 16 blocks
+			% 16 Blocks
 			for k=1:16
-				app.Blocks{k} = uicontrol(...
-					'Parent', app.Grid,...
-					'Style', 'pushbutton',...
-					'Enable', 'inactive',...
-					'FontSize', 48,...
-					'FontName', 'Calibri');
+				app.Blocks{k}=matlab2048.Tile('0',[240 240 240]/255);
+				set(app.Blocks{k}, 'Parent', app.Grid);
 			end
 			
 			% read colors from file
@@ -67,10 +63,10 @@ classdef view2048 < hgsetget
 				for m=1:4
 					text = num2str(src.Board(m,n));
 					% set the text
-					set(obj.Blocks{m+(n-1)*4}, 'String', text);
+					set(obj.Blocks{m+(n-1)*4}, 'Text', text);
 					% get/set the RGB color based on the value
 					color = obj.Colors(text,:).RGB;
-					set(obj.Blocks{m+(n-1)*4}, 'BackgroundColor', color/255);
+					set(obj.Blocks{m+(n-1)*4}, 'Color', color/255);
 				end
 			end
 		end % onBoardUpdated
