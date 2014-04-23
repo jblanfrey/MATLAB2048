@@ -31,13 +31,11 @@ classdef view2048 < hgsetget
 			
 			% a grid to handle all the blocks
 			app.Grid = uiextras.Grid(...
-				'Parent', app.Figure,...
-				'Spacing', 10,...
-				'Padding', 10);
+				'Parent', app.Figure);
 			
 			% 16 Blocks
 			for k=1:16
-				app.Blocks{k}=matlab2048.Tile('0',[240 240 240]/255);
+				app.Blocks{k}=matlab2048.Tile('0', [210 210 210]/255);
 				set(app.Blocks{k}, 'Parent', app.Grid);
 			end
 			
