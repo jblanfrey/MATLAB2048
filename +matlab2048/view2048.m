@@ -45,7 +45,7 @@ classdef view2048 < hgsetget
 			% update the user interface
 			app.onBoardUpdated(app.Model);
 			
-			% set up tthe grid to be 4x4
+			% set up the grid to be 4x4
 			set(app.Grid, 'RowSizes', -1*ones(4,1), 'ColumnSizes', -1*ones(4,1));
 			
 			% add listener
